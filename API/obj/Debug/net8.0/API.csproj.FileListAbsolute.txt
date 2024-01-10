@@ -253,3 +253,4 @@
 /Users/shankarsawant81/Documents/work/DatingApp/API/obj/Debug/net8.0/API.pdb
 /Users/shankarsawant81/Documents/work/DatingApp/API/obj/Debug/net8.0/API.genruntimeconfig.cache
 /Users/shankarsawant81/Documents/work/DatingApp/API/obj/Debug/net8.0/ref/API.dll
+/Users/shankarsawant/Documents/rxo/backend/DatingApp/API/obj/Debug/net8.0/API.sourcelink.json
