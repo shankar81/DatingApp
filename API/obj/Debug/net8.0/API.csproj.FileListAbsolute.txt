@@ -254,3 +254,11 @@
 /Users/shankarsawant81/Documents/work/DatingApp/API/obj/Debug/net8.0/API.genruntimeconfig.cache
 /Users/shankarsawant81/Documents/work/DatingApp/API/obj/Debug/net8.0/ref/API.dll
 /Users/shankarsawant/Documents/rxo/backend/DatingApp/API/obj/Debug/net8.0/API.sourcelink.json
+/Users/shankarsawant/Documents/rxo/backend/DatingApp/API/bin/Debug/net8.0/Microsoft.IdentityModel.Abstractions.dll
+/Users/shankarsawant/Documents/rxo/backend/DatingApp/API/bin/Debug/net8.0/Microsoft.IdentityModel.JsonWebTokens.dll
+/Users/shankarsawant/Documents/rxo/backend/DatingApp/API/bin/Debug/net8.0/Microsoft.IdentityModel.Logging.dll
+/Users/shankarsawant/Documents/rxo/backend/DatingApp/API/bin/Debug/net8.0/Microsoft.IdentityModel.Tokens.dll
+/Users/shankarsawant/Documents/rxo/backend/DatingApp/API/bin/Debug/net8.0/System.IdentityModel.Tokens.Jwt.dll
+/Users/shankarsawant/Documents/rxo/backend/DatingApp/API/bin/Debug/net8.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll
+/Users/shankarsawant/Documents/rxo/backend/DatingApp/API/bin/Debug/net8.0/Microsoft.IdentityModel.Protocols.dll
+/Users/shankarsawant/Documents/rxo/backend/DatingApp/API/bin/Debug/net8.0/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
