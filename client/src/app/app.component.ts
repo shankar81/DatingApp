@@ -17,22 +17,11 @@ import { AccountService } from './services/account.service';
 })
 export class AppComponent implements OnInit {
   title = 'client';
-  users: any[] = [];
 
-  constructor(
-    private httpClient: HttpClient,
-    private accountServices: AccountService
-  ) {}
+  constructor(private accountServices: AccountService) {}
 
   ngOnInit(): void {
-    this.getUsers();
     this.setCurrentUser();
-  }
-
-  getUsers() {
-    this.httpClient.get<any[]>('https://localhost:5001/api/users').subscribe({
-      next: (value) => (this.users = value),
-    });
   }
 
   setCurrentUser() {
