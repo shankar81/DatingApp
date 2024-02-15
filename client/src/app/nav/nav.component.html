@@ -2,19 +2,28 @@
   <div class="container-fluid">
     <a class="navbar-brand" href="#">Dating App</a>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul
-        class="navbar-nav me-auto mb-2 mb-lg-0"
-        *ngIf="accountService.currentUser$ | async"
-      >
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Matches</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">List</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Messages</a>
-        </li>
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <ng-container *ngIf="accountService.currentUser$ | async">
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              routerLinkActive="active"
+              aria-current="page"
+              routerLink="/members"
+              >Matches</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLinkActive="active" routerLink="/lists"
+              >List</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLinkActive="active" routerLink="/messages"
+              >Messages</a
+            >
+          </li>
+        </ng-container>
       </ul>
       <div
         class="dropdown"
