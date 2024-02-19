@@ -270,3 +270,6 @@
 /Users/shankarsawant81/Documents/work/DatingApp/API/bin/Debug/net8.0/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 /Users/shankarsawant81/Documents/work/DatingApp/API/bin/Debug/net8.0/Microsoft.IdentityModel.Tokens.dll
 /Users/shankarsawant81/Documents/work/DatingApp/API/bin/Debug/net8.0/System.IdentityModel.Tokens.Jwt.dll
+/Users/shankarsawant81/Documents/work/DatingApp/API/bin/Debug/net8.0/Data/UserSeedData.json
+/Users/shankarsawant81/Documents/work/DatingApp/API/bin/Debug/net8.0/AutoMapper.dll
+/Users/shankarsawant81/Documents/work/DatingApp/API/bin/Debug/net8.0/AutoMapper.Extensions.Microsoft.DependencyInjection.dll

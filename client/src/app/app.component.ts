@@ -4,7 +4,7 @@ import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HomeComponent } from './home/home.component';
-import { User } from './models/User';
+import { User } from './models/user';
 import { NavComponent } from './nav/nav.component';
 import { AccountService } from './services/account.service';
 
@@ -16,7 +16,7 @@ import { AccountService } from './services/account.service';
   styleUrl: './app.component.css',
 })
 export class AppComponent implements OnInit {
-  title = 'client';
+  title = 'Dating App';
 
   constructor(private accountServices: AccountService) {}
 
