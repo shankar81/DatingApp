@@ -38,13 +38,11 @@ export class MemberDetailComponent implements OnInit {
   getImages() {
     if (!this.member) return;
     for (let image of this.member.photos) {
-      console.log(image);
       this.images.push(new ImageItem({ src: image.url, thumb: image.url }));
     }
   }
 
   onNavChange(changeEvent: NgbNavChangeEvent) {
-    console.log(changeEvent);
     this.active = changeEvent.nextId;
   }
 }
