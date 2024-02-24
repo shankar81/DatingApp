@@ -3,6 +3,7 @@ import { environment } from '../../environments/environment';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Member } from '../models/member';
 import { map, of } from 'rxjs';
+import { Photo } from '../models/photo';
 
 @Injectable({
   providedIn: 'root',
@@ -29,13 +30,17 @@ export class MembersService {
   updateMember(member: Member) {
     return this.http.put(`${this.baseUrl}/users`, member).pipe(
       map(() => {
-        const index = this.members.findIndex(
-          (el) => member.userName === el.userName
-        );
-        if (index > 0) {
-          this.members[index] = { ...this.members[index], ...member };
-        }
+        const index = this.members.indexOf(member);
+        this.members[index] = { ...this.members[index], ...member };
       })
     );
+  }
+
+  setMainPhoto(id: number) {
+    return this.http.put(`${this.baseUrl}/users/set-main-photo/${id}`, {});
+  }
+
+  deletePhoto(id: number) {
+    return this.http.delete(`${this.baseUrl}/users/delete-photo/${id}`, {});
   }
 }

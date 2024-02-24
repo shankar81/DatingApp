@@ -28,8 +28,12 @@
       <div
         class="dropdown"
         style="margin-left: auto"
-        *ngIf="accountService.currentUser$ | async"
+        *ngIf="accountService.currentUser$ | async as user"
       >
+        <img
+          src="{{ user.photoUrl || './assets/user.png' }}"
+          alt="user photo"
+        />
         <button
           class="btn text-light text-decoration-none dropdown-toggle"
           type="button"

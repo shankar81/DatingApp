@@ -40,15 +40,16 @@ public class AccountController : BaseController
         return new UserDto
         {
             Username = user.UserName,
-            Token = tokenService.CreateToken(user)
+            Token = tokenService.CreateToken(user),
         };
     }
 
     [HttpPost("login")]
     public async Task<ActionResult<UserDto>> Login(LoginDto loginDto)
     {
-
-        var user = await context.Users.SingleOrDefaultAsync(user => user.UserName == loginDto.Username);
+        var user = await context.Users
+                .Include(p => p.Photos)
+                .SingleOrDefaultAsync(user => user.UserName == loginDto.Username);
 
         if (user == null) return Unauthorized("Invalid username");
 
@@ -64,7 +65,8 @@ public class AccountController : BaseController
         return new UserDto
         {
             Username = user.UserName,
-            Token = tokenService.CreateToken(user)
+            Token = tokenService.CreateToken(user),
+            PhotoUrl = user.Photos.FirstOrDefault(x => x.IsMain)?.Url
         };
     }
 

@@ -8,11 +8,12 @@ import { Member } from '../../models/member';
 import { User } from '../../models/user';
 import { AccountService } from '../../services/account.service';
 import { MembersService } from '../../services/members.service';
+import { PhotoEditorComponent } from '../photo-editor/photo-editor.component';
 
 @Component({
   selector: 'app-member-edit',
   standalone: true,
-  imports: [CommonModule, NgbNavModule, FormsModule],
+  imports: [CommonModule, NgbNavModule, FormsModule, PhotoEditorComponent],
   templateUrl: './member-edit.component.html',
   styleUrl: './member-edit.component.css',
 })
