@@ -1,32 +1,86 @@
-<form #registerForm="ngForm">
+<form class="mt-5" [formGroup]="registerFormGroup">
   <div class="mb-3">
     <label for="exampleInputEmail1" class="form-label">Email address</label>
     <input
       name="username"
-      [(ngModel)]="model.username"
       type="email"
       class="form-control"
       id="exampleInputEmail1"
+      formControlName="email"
       aria-describedby="emailHelp"
+      [class.is-invalid]="
+        registerFormGroup.controls['email'].errors &&
+        registerFormGroup.controls['email'].touched
+      "
     />
-    <div id="emailHelp" class="form-text">
-      We'll never share your email with anyone else.
+    <div
+      class="invalid-feedback d-inline-block"
+      *ngIf="
+        registerFormGroup.controls['email'].touched &&
+        registerFormGroup.controls['email'].hasError('required')
+      "
+    >
+      Please enter email
     </div>
   </div>
   <div class="mb-3">
     <label for="exampleInputPassword1" class="form-label">Password</label>
     <input
       name="password"
-      [(ngModel)]="model.password"
+      formControlName="password"
       type="password"
       class="form-control"
       id="exampleInputPassword1"
     />
+    <div
+      class="invalid-feedback d-inline-block"
+      *ngIf="
+        registerFormGroup.controls['password'].touched &&
+        registerFormGroup.controls['password'].hasError('required')
+      "
+    >
+      Please enter password
+    </div>
+    <div
+      class="invalid-feedback d-inline-block"
+      *ngIf="registerFormGroup.controls['password'].hasError('minlength')"
+    >
+      Password must be at least 4 characters long
+    </div>
+    <div
+      class="invalid-feedback d-inline-block"
+      *ngIf="registerFormGroup.controls['password'].hasError('maxlength')"
+    >
+      Password must be within 8 characters
+    </div>
   </div>
-  <button type="submit" class="btn btn-primary" (click)="onRegister()">
+  <div class="mb-3">
+    <label for="exampleInputPassword2" class="form-label"
+      >Confirm Password</label
+    >
+    <input
+      name="confirmPassword"
+      formControlName="confirmPassword"
+      type="password"
+      class="form-control"
+      id="exampleInputPassword2"
+    />
+    <div
+      class="invalid-feedback d-inline-block"
+      *ngIf="
+        registerFormGroup.controls['confirmPassword'].hasError('notMatching')
+      "
+    >
+      Passwords are not matching
+    </div>
+  </div>
+  <button type="submit" class="btn btn-primary me-5" (click)="onRegister()">
     Submit
   </button>
   <button type="submit" class="btn btn-primary" (click)="onCancel()">
     Cancel
   </button>
 </form>
+
+{{ registerFormGroup.value | json }}
+{{ registerFormGroup.status | json }}

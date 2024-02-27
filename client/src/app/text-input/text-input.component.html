@@ -1,0 +1,31 @@
+<div class="mb-3">
+  <label for="exampleInputPassword1" class="form-label">{{ label }}</label>
+  <input
+    name="password"
+    formControl="{{ control }}"
+    type="password"
+    class="form-control"
+    id="exampleInputPassword1"
+  />
+  <div
+    class="invalid-feedback d-inline-block"
+    *ngIf="
+      registerFormGroup.controls['password'].touched &&
+      registerFormGroup.controls['password'].hasError('required')
+    "
+  >
+    Please enter {{ label }}
+  </div>
+  <div
+    class="invalid-feedback d-inline-block"
+    *ngIf="registerFormGroup.controls['password'].hasError('minlength')"
+  >
+    {{ label }} must be at least 4 characters long
+  </div>
+  <div
+    class="invalid-feedback d-inline-block"
+    *ngIf="registerFormGroup.controls['password'].hasError('maxlength')"
+  >
+    {{ label }} must be within 8 characters
+  </div>
+</div>
